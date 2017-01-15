@@ -15,9 +15,19 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Class Connect</title>
 </head>
 <body>
+  <header>  
+    <h1>Class Connect</h1>
+    <nav>
+    <% if logged_in? %>
+      <%=erb(:'./users/_logged_in') %>
+    <% else %>
+      <%=erb(:'./users/_logged_out') %>
+    <% end %>
+    </nav>
+  </header>
   <%= yield %>
 </body>
 </html>
